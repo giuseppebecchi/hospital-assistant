@@ -49,4 +49,4 @@ COPY agent.py .
 RUN python agent.py download-files
 
 # Run the application.
-CMD ["python", "agent.py", "dev"]
+CMD ["python", "agent.py", "start"]

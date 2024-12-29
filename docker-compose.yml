@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ciuster/voice-assistant-backend
+    env_file:
+      - .env
+    #volumes:
+      # Monta l'intera directory corrente nella cartella di lavoro specificata nel Dockerfile
+      #- .:/home/appuser
+    #apri a porta 8081
+    ports:
+      - "8081:8081"
+    working_dir: /home/appuser
+    stdin_open: true
+    tty: true
+    #command: python agent.py start

@@ -47,3 +47,12 @@ python3 agent.py dev
 ```
 
 This agent requires a frontend application to communicate with. You can use one of our example frontends in [livekit-examples](https://github.com/livekit-examples/), create your own following one of our [client quickstarts](https://docs.livekit.io/realtime/quickstarts/), or test instantly against one of our hosted [Sandbox](https://cloud.livekit.io/projects/p_/sandbox) frontends.
+
+
+### Per eseguirlo come container docker
+copiare in .env tutti i file di configurazione eliminando le virgolette
+
+fare una build
+docker build -t  ciuster/voice-assistant-backend .
+
+docker run --rm --env-file .env -p 8081:8081 -d --name voice-hospital-frontend ciuster/voice-assistant-backend
